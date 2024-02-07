@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>fetch api</title>
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <h1 class="main-heading">Storing Data In Table</h1>
+    <div class="srch">
+      <input type="text" id="searchBar" placeholder="Search..." />
+      <button id="searchButton">Search</button>
+    </div>
+    <table>
+      <thead>
+        <tr>
+          <th>Sr. No.</th>
+          <th>Title <button class="sort" data-sort="title">Sort</button></th>
+          <th>Brand <button class="sort" data-sort="brand">Sort</button></th>
+          <th>
+            Description
+            <button class="sort" data-sort="description">Sort</button>
+          </th>
+          <th>Price <button class="sort" data-sort="price">Sort</button></th>
+          <th>
+            Categories <button class="sort" data-sort="categories">Sort</button>
+          </th>
+        </tr>
+      </thead>
+      <tbody id="tablebody"></tbody>
+    </table>
+    <div class="btn">
+      <button id="prevPage">pre</button>
+      <button id="nextPage">nex</button>
+    </div>
+    <script src="index.js" async defer></script>
+  </body>
+</html>
