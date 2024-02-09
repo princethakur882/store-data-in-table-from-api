@@ -14,28 +14,36 @@
       <input type="text" id="searchBar" placeholder="Search..." />
       <button id="searchButton">Search</button>
     </div>
-    <table>
+    <table id="myTable">
       <thead>
         <tr>
           <th>Sr. No.</th>
-          <th>Title <button class="sort" data-sort="title">Sort</button></th>
-          <th>Brand <button class="sort" data-sort="brand">Sort</button></th>
+          <th id="brand">
+            Brand <button class="sort" data-sort="brand">Sort</button>
+          </th>
+          <th>Title
+            <!-- <button class="sort" data-sort="title">Sort</button> -->
+          </th>
           <th>
             Description
-            <button class="sort" data-sort="description">Sort</button>
+            <!-- <button class="sort" data-sort="description">Sort</button> -->
           </th>
-          <th>Price <button class="sort" data-sort="price">Sort</button></th>
+          <th>Price 
+            <!-- <button class="sort" data-sort="price">Sort</button> -->
+          </th>
           <th>
-            Categories <button class="sort" data-sort="categories">Sort</button>
+            Category
+            <!-- Category <button class="sort" data-sort="category">Sort</button> -->
           </th>
         </tr>
       </thead>
       <tbody id="tablebody"></tbody>
     </table>
     <div class="btn">
-      <button id="prevPage">pre</button>
-      <button id="nextPage">nex</button>
+      <button id="prevPage">Prev</button>
+      <button id="nextPage">Next</button>
     </div>
     <script src="index.js" async defer></script>
+    <script></script>
   </body>
 </html>

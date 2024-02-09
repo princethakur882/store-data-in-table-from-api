@@ -58,3 +58,53 @@ tr:nth-child(even) {
 #searchButton{
     margin-left: 2px;
 }
+
+/* Style for the Next and Previous buttons */
+.btn button {
+    padding: 10px 20px;
+    background-color: #0074d9;
+    color: white;
+    border: 2px solid #dddddd00;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    margin-right: 10px;
+  }
+  
+  /* Hover effect */
+  .btn button:hover {
+    background-color: #0056b3;
+  }
+/* Style for the search container */
+.srch {
+    display: flex;
+    align-items: center;
+    max-width: 300px;
+    margin: 0 auto;
+  }
+  
+  /* Style for the search input */
+  #searchBar {
+    flex: 1;
+    padding: 9px;
+    border: 2px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+  }
+  
+  /* Style for the search button */
+  #searchButton {
+    background-color: #0074d9;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 16px;
+  }
+  
+  /* Hover effect for the button */
+  #searchButton:hover {
+    background-color: #0056b3;
+  }
+    
