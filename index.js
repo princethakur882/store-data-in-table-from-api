@@ -24,26 +24,26 @@ function displayTable(page) {
         tabledata += `<tr>
             <td>${values.id}</td>
             <td>${values.brand}</td>
+            <td>${values.category}</td>
             <td>${values.title}</td>
             <td>${values.description}</td>
             <td>${values.price}</td>
-            <td>${values.category}</td>
         </tr>`;
     });
 
     document.getElementById('tablebody').innerHTML = tabledata;
 }
 
-function sortData(property) {
+function sortData(property, buttonElement) {
     if (currentSortProperty === property) {
         isSortAscending = !isSortAscending;
     } else {
         isSortAscending = true;
         currentSortProperty = property;
     }
-    slicedData.sort((a, b) => {
-        const valueA = a[property].brand;
-        const valueB = b[property].brand;
+    data.sort((a, b) => {
+        const valueA = a[property];
+        const valueB = b[property];
 
         if (valueA < valueB) {
             return isSortAscending ? -1 : 1;
@@ -54,21 +54,24 @@ function sortData(property) {
         return 0;
     });
     displayTable(currentPage);
+
+    buttonElement.innerText = isSortAscending ? '↓' : '↑';
 }
 
-document.querySelector(".sort").addEventListener('click', function () {
 
-    let property = this.dataset.property;
-
-    document.querySelectorAll('.sort').forEach((header) => {
-        if (header !== this) {
-            header.classList.remove('ascending', 'descending');
-        }
+document.querySelectorAll('.sort').forEach((header) => {
+    header.addEventListener('click', function () {
+        let property = this.dataset.sort;
+        document.querySelectorAll('.sort').forEach((header) => {
+            if (header !== this) {
+                header.classList.remove('ascending', 'descending');
+            }
+        });
+        this.classList.toggle(isSortAscending ? 'ascending' : 'descending');
+        sortData(property, this);
     });
-
-    this.classList.toggle(isSortAscending ? 'ascending' : 'descending');
-    sortData(property);
 });
+
 
 function filterData(searchTerm) {
     return data.filter(item =>
